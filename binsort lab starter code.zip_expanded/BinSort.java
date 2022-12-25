@@ -29,7 +29,7 @@ public class BinSort {
 	public void sort() 
 	{
 		
-		int firstCheckIndex = wordSz - 1; //get the charAt value you should check first
+		final int firstCheckIndex = wordSz - 1; //get the charAt value you should check first
 		final int AlphaAsciiDiff = 97; //constant for converting between ASCII and the alphabet
 		for (String str : theData) //start the sort by putting items from array to master stack	and unsorted stack
 		{
@@ -41,9 +41,9 @@ public class BinSort {
 		{
 			for (int i = 0; i < dataSz; i++) //put all words into their respective bins
 			{
-				String string = master.pop();
-				char character = (string).charAt(charAtVal);
-				bin[(int)(character) - AlphaAsciiDiff].push(string);
+				String word = master.pop();
+				char letter = (word).charAt(charAtVal);
+				bin[(int)(letter) - AlphaAsciiDiff].push(word);
 				
 			}
 			for (int i = 25; i >= 0; i--) //loop through all the bins from right to left
